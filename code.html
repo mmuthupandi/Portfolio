@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Benjamin Portfolio Side-by-Side</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#fbbd08",
+                        "background-light": "#ffffff",
+                        "background-dark": "#0a0a0a",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        .outline-text {
+            color: transparent;
+            -webkit-text-stroke: 1.5px #fbbd08;
+        }
+        .ios-shadow {
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-md h-8 flex justify-between items-center px-6 z-50 pointer-events-none mix-blend-exclusion text-white">
+<span class="text-[12px] font-bold">9:41</span>
+<div class="flex gap-1.5">
+<span class="material-icons text-[14px]">signal_cellular_alt</span>
+<span class="material-icons text-[14px]">wifi</span>
+<span class="material-icons text-[14px]">battery_full</span>
+</div>
+</div>
+<div class="relative h-screen flex flex-row overflow-hidden max-w-md mx-auto border-x border-gray-100 dark:border-gray-900">
+<div class="h-full w-1/2 relative overflow-hidden shrink-0">
+<img alt="Black and white portrait of Benjamin" class="w-full h-full object-cover grayscale contrast-125 brightness-90" src="bg_removed.png"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+<button class="absolute top-10 left-4 z-30 w-8 h-8 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 text-white" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-icons text-sm">contrast</span>
+</button>
+</div>
+<div class="h-full w-1/2 bg-background-light dark:bg-background-dark p-5 pr-20 flex flex-col justify-center gap-5 relative z-10 overflow-y-auto">
+<div class="space-y-0.5">
+<h2 class="text-sm font-black tracking-tight dark:text-white">HI THERE!</h2>
+<h1 class="text-2xl font-black tracking-tight leading-none dark:text-white break-words">
+                    I'M <span class="outline-text block">BENJAMIN</span>
+</h1>
+</div>
+<div class="inline-flex">
+<span class="bg-primary text-[9px] font-black uppercase tracking-widest px-3 py-1.5 text-white leading-tight">
+                    Graphic Designer<br/>/ Photographer
+                </span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-xs leading-relaxed">
+                Veriatio erioris eserum fuga. Pa cusaper rovitin nonsequos aceate cus veribearum intur? Quis et eos arumquae periae.
+            </p>
+<div class="mt-2">
+<button class="bg-primary hover:bg-yellow-500 transition-colors text-white text-[10px] font-black px-5 py-3 rounded-full uppercase tracking-widest shadow-lg shadow-primary/20 whitespace-nowrap">
+                    More About Me
+                </button>
+</div>
+</div>
+<div class="absolute right-3 top-1/2 -translate-y-1/2 z-20 flex flex-col items-center gap-4 bg-primary px-1.5 py-5 rounded-full ios-shadow">
+<a class="text-slate-900 hover:scale-110 transition-transform" href="#"><span class="material-icons text-lg">home</span></a>
+<div class="w-1 h-1 bg-black/20 rounded-full"></div>
+<a class="text-slate-900 hover:scale-110 transition-transform" href="#"><span class="material-icons text-lg">person</span></a>
+<div class="w-1 h-1 bg-black/20 rounded-full"></div>
+<a class="text-slate-900 hover:scale-110 transition-transform" href="#"><span class="material-icons text-lg">work</span></a>
+<div class="w-1 h-1 bg-black/20 rounded-full"></div>
+<a class="text-slate-900 hover:scale-110 transition-transform" href="#"><span class="material-icons text-lg">visibility</span></a>
+<div class="w-1 h-1 bg-black/20 rounded-full"></div>
+<a class="text-slate-900 hover:scale-110 transition-transform" href="#"><span class="material-icons text-lg">campaign</span></a>
+<div class="w-1 h-1 bg-black/20 rounded-full"></div>
+<a class="text-slate-900 hover:scale-110 transition-transform" href="#"><span class="material-icons text-lg">send</span></a>
+</div>
+</div>
+
+</body></html>

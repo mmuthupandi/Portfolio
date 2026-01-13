@@ -1,0 +1,397 @@
+@import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #3b82f6;
+  --color-background-light: #ffffff;
+  --color-background-dark: #0a0a0a;
+  --font-display: Inter, sans-serif;
+  --font-body: Inter, sans-serif;
+}
+
+body {
+  min-height: max(884px, 100dvh);
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+}
+
+.outline-text {
+  color: transparent;
+  -webkit-text-stroke: 1.5px #3b82f6;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  letter-spacing: 0.02em;
+  position: relative;
+  display: inline-block;
+}
+
+.outline-text::before {
+  content: 'MUTHUPANDI';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #3b82f6;
+  -webkit-text-stroke: 0px;
+  width: 0;
+  overflow: hidden;
+  animation: fillText 2s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fillText {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    -webkit-text-stroke: 1.5px #3b82f6;
+    filter: drop-shadow(0 0 0px #3b82f6);
+  }
+
+  50% {
+    -webkit-text-stroke: 2px #3b82f6;
+    filter: drop-shadow(0 0 8px #3b82f6);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes sway {
+
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes sway-grass {
+
+  0%,
+  100% {
+    transform: skewX(0deg);
+  }
+
+  50% {
+    transform: skewX(5deg);
+  }
+}
+
+@keyframes floatLeaf {
+  0% {
+    transform: translateY(0) rotate(0deg) translateX(0);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(100px) rotate(360deg) translateX(20px);
+    opacity: 0;
+  }
+}
+
+@keyframes firefly-move {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(20px, -100px);
+    opacity: 0;
+  }
+}
+
+/* Smooth Levitation Effect */
+@keyframes levitate {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.animate-levitate {
+  animation: levitate 4s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-sway-slow {
+  animation: sway 6s ease-in-out infinite;
+}
+
+.animate-sway-grass {
+  animation: sway-grass 3s ease-in-out infinite;
+  transform-origin: bottom;
+}
+
+.animate-float-leaf {
+  animation: floatLeaf 10s linear infinite;
+}
+
+.firefly {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #fff, 0 0 20px #3b82f6;
+  animation: firefly-move ease-in-out infinite;
+}
+
+.delay-100 {
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+.delay-400 {
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+
+.ios-shadow {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* 3D Wrapper Style */
+#imageTiltWrapper {
+  transition: transform 0.1s ease-out;
+  transform-style: preserve-3d;
+}
+
+/* Bird Animations */
+.bird {
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/174479/bird-cells-new.svg);
+  background-size: auto 100%;
+  width: 88px;
+  height: 125px;
+  will-change: background-position;
+  animation-name: fly-cycle;
+  animation-timing-function: steps(10);
+  animation-iteration-count: infinite;
+}
+
+.bird--one {
+  animation-duration: 1s;
+  animation-delay: -0.5s;
+}
+
+.bird--two {
+  animation-duration: 0.9s;
+  animation-delay: -0.75s;
+}
+
+.bird--three {
+  animation-duration: 1.25s;
+  animation-delay: -0.25s;
+}
+
+.bird--four {
+  animation-duration: 1.1s;
+  animation-delay: -0.5s;
+}
+
+.bird-container {
+  position: absolute;
+  top: 10%;
+  left: -10%;
+  transform: scale(0) translateX(-10vw);
+  will-change: transform;
+  animation-name: fly-right-one;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.bird-container--one {
+  animation-duration: 15s;
+  animation-delay: 0;
+}
+
+.bird-container--two {
+  animation-duration: 16s;
+  animation-delay: 1s;
+}
+
+.bird-container--three {
+  animation-duration: 14.6s;
+  animation-delay: 9.5s;
+}
+
+.bird-container--four {
+  animation-duration: 16s;
+  animation-delay: 10.25s;
+}
+
+@keyframes fly-cycle {
+  100% {
+    background-position: -900px 0;
+  }
+}
+
+@keyframes fly-right-one {
+  0% {
+    transform: scale(0.3) translateX(-10vw);
+  }
+
+  10% {
+    transform: translateY(2vh) translateX(10vw) scale(0.4);
+  }
+
+  20% {
+    transform: translateY(0vh) translateX(30vw) scale(0.5);
+  }
+
+  30% {
+    transform: translateY(4vh) translateX(50vw) scale(0.6);
+  }
+
+  40% {
+    transform: translateY(2vh) translateX(70vw) scale(0.6);
+  }
+
+  50% {
+    transform: translateY(0vh) translateX(90vw) scale(0.6);
+  }
+
+  60% {
+    transform: translateY(0vh) translateX(110vw) scale(0.6);
+  }
+
+  100% {
+    transform: translateY(0vh) translateX(110vw) scale(0.6);
+  }
+}
+
+@keyframes fly-right-two {
+  0% {
+    transform: translateY(-2vh) translateX(-10vw) scale(0.5);
+  }
+
+  10% {
+    transform: translateY(0vh) translateX(10vw) scale(0.4);
+  }
+
+  20% {
+    transform: translateY(-4vh) translateX(30vw) scale(0.6);
+  }
+
+  30% {
+    transform: translateY(1vh) translateX(50vw) scale(0.45);
+  }
+
+  40% {
+    transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
+  }
+
+  50% {
+    transform: translateY(0vh) translateX(90vw) scale(0.45);
+  }
+
+  51% {
+    transform: translateY(0vh) translateX(110vw) scale(0.45);
+  }
+
+  100% {
+    transform: translateY(0vh) translateX(110vw) scale(0.45);
+  }
+}
