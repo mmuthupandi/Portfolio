@@ -23,6 +23,11 @@ const Navigation = () => {
             </a>
             <div className="w-1 h-1 bg-white/20 md:bg-black/20 rounded-full hidden md:block"></div>
 
+            <a className="text-white md:text-slate-900 hover:scale-110 active:scale-90 transition-transform" href="#certifications">
+                <span className="material-icons text-xl md:text-lg">workspace_premium</span>
+            </a>
+            <div className="w-1 h-1 bg-white/20 md:bg-black/20 rounded-full hidden md:block"></div>
+
             <a className="text-white md:text-slate-900 hover:scale-110 active:scale-90 transition-transform" href="#contact">
                 <span className="material-icons text-xl md:text-lg">send</span>
             </a>

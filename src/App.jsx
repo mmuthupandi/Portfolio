@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import WorkSection from './components/WorkSection';
+import CertificationSection from './components/CertificationSection';
 import ContactSection from './components/ContactSection';
 
 import Navigation from './components/Navigation';
@@ -35,6 +36,7 @@ function App() {
       <HeroSection onToggleDark={toggleDark} onMoreClick={scrollToAbout} />
       <AboutSection />
       <WorkSection />
+      <CertificationSection />
       <ContactSection />
       <Navigation />
     </div>
