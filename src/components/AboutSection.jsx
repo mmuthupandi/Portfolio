@@ -16,17 +16,17 @@ const AboutSection = () => {
 
                 <div className="space-y-4">
                     <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
-                        Hello! I'm <span className="text-primary font-bold">Muthupandi</span>, a passionate Django Developer and intermediate DevOps Engineer with a keen interest in building scalable web applications and automating deployment processes.
+                        Hello! I'm <span className="text-primary font-bold">Muthupandi</span>, I am a second-year undergraduate student at Kongunadu Arts and Science College, currently exploring the world of software systems and infrastructure. As an aspiring DevOps Engineer, I am deeply committed to learning how to build and deploy efficient applications.
                     </p>
 
                     <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
-                        With expertise in Python, Django, and modern DevOps practices, I create robust backend solutions and streamline development workflows. I'm constantly learning and exploring new technologies to deliver efficient and maintainable code.
+                        I have built a solid foundation with Python and Django for backend development and React for creating user interfaces. I consider myself a quick study, I've already earned a Google certification in Python and enjoy diving into the logic behind systems. My goal is to find an internship where I can be a versatile team player, adapt to new technologies quickly, and contribute to real-world projects while I continue to grow my technical toolkit."
                     </p>
 
                     <div className="space-y-3 pt-4">
                         <h3 className="text-xl font-bold dark:text-white">Skills</h3>
                         <div className="flex flex-wrap gap-2">
-                            {['Django', 'Python', 'DevOps', 'Docker', 'CI/CD', 'Linux'].map((skill) => (
+                            {['Django', 'Python', 'Devops', 'React (Basics)', 'Unlocking Soon...', '404.Not Found'].map((skill) => (
                                 <span key={skill} className="px-3 py-1 bg-primary/10 text-primary text-sm font-semibold rounded-full">
                                     {skill}
                                 </span>
@@ -34,19 +34,6 @@ const AboutSection = () => {
                         </div>
                     </div>
 
-                    <div className="space-y-3 pt-4">
-                        <h3 className="text-xl font-bold dark:text-white">Experience</h3>
-                        <div className="space-y-4">
-                            <div className="border-l-2 border-primary pl-4">
-                                <h4 className="font-bold dark:text-white">Django Developer</h4>
-                                <p className="text-sm text-slate-500 dark:text-slate-400">Building scalable web applications</p>
-                            </div>
-                            <div className="border-l-2 border-primary pl-4">
-                                <h4 className="font-bold dark:text-white">DevOps Engineer (Intermediate)</h4>
-                                <p className="text-sm text-slate-500 dark:text-slate-400">Automating deployments and infrastructure</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

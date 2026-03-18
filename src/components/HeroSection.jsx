@@ -1,8 +1,6 @@
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
-import Navigation from './Navigation';
-
-const HeroSection = ({ imageStyle, onToggleDark, onMoreClick }) => {
+const HeroSection = ({ onToggleDark, onMoreClick }) => {
     const tiltRef = useRef(null);
     const sectionRef = useRef(null);
 
@@ -37,7 +35,6 @@ const HeroSection = ({ imageStyle, onToggleDark, onMoreClick }) => {
             <motion.div
                 id="imageSection"
                 ref={sectionRef}
-                style={window.innerWidth >= 768 ? imageStyle : {}}
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
                 initial={{ opacity: 0 }}
@@ -46,7 +43,7 @@ const HeroSection = ({ imageStyle, onToggleDark, onMoreClick }) => {
                 className="absolute inset-0 h-full w-full md:relative md:h-full md:w-1/2 overflow-hidden shrink-0 transition-all duration-700 perspective-1000 group bg-gray-50 dark:bg-black/20 md:bg-transparent z-0"
             >
                 {/* 3D Tilt Interaction Wrapper - Mobile: Image covers bg */}
-                <div id="imageTiltWrapper" ref={tiltRef} className="w-full h-full flex items-end md:items-start justify-center pb-0 md:pt-24 transition-transform duration-100 ease-out">
+                <div id="imageTiltWrapper" ref={tiltRef} className="w-full h-full flex items-end md:items-start justify-center pb-52 md:pb-0 md:pt-24 transition-transform duration-100 ease-out">
                     <div className="w-full h-full md:h-[85%] animate-levitate relative z-20 pointer-events-none flex items-end justify-center md:items-end md:justify-center">
                         <img
                             alt="Portrait of Muthupandi"
@@ -84,9 +81,9 @@ const HeroSection = ({ imageStyle, onToggleDark, onMoreClick }) => {
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none md:hidden"></div>
 
-                {/* Theme Toggle - Absolute position for both */}
+                {/* Theme Toggle - Fixed position top right */}
                 <button
-                    className="absolute top-4 left-4 z-50 w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30 text-white shadow-lg md:bg-white/10"
+                    className="fixed top-4 right-4 z-50 w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30 text-white shadow-lg md:bg-white/10"
                     onClick={onToggleDark}
                 >
                     <span className="material-icons text-xl">contrast</span>
@@ -103,10 +100,24 @@ const HeroSection = ({ imageStyle, onToggleDark, onMoreClick }) => {
                 {/* Mobile: Glassmorphism Card Effect behind text */}
                 <div className="absolute inset-0 md:hidden bg-gradient-to-t from-white via-white/80 to-transparent dark:from-black dark:via-black/80 z-0 pointer-events-none"></div>
 
-                {/* Bird Animation Background - Desktop Only or subtle on mobile */}
-                <div className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden opacity-100 dark:opacity-40 dark:invert hidden md:block">
+                {/* Bird Animation Background */}
+                <div className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden opacity-100 dark:opacity-40 dark:invert">
                     <div className="bird-container bird-container--one"><div className="bird bird--one"></div></div>
                     <div className="bird-container bird-container--two"><div className="bird bird--two"></div></div>
+                    <div className="bird-container bird-container--three"><div className="bird bird--three"></div></div>
+                </div>
+
+                {/* Floating Leaves */}
+                <div className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
+                    <div className="absolute top-1/4 left-1/4 w-4 h-4 opacity-30 text-green-500 animate-float-leaf">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17,8C8,10,5.9,16.17,3.82,21.34L5.71,22l1-2.3A4.49,4.49,0,0,0,8,20C19,20,22,3,22,3,21,5,14,5.25,9,6.25S2,11.5,2,13.5a6.22,6.22,0,0,0,1.75,3.75C7,8,17,8,17,8Z" /></svg>
+                    </div>
+                    <div className="absolute top-1/3 right-1/4 w-3 h-3 opacity-20 text-green-400 animate-float-leaf" style={{ animationDelay: '2s', animationDuration: '8s' }}>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17,8C8,10,5.9,16.17,3.82,21.34L5.71,22l1-2.3A4.49,4.49,0,0,0,8,20C19,20,22,3,22,3,21,5,14,5.25,9,6.25S2,11.5,2,13.5a6.22,6.22,0,0,0,1.75,3.75C7,8,17,8,17,8Z" /></svg>
+                    </div>
+                    <div className="absolute bottom-1/3 left-1/3 w-5 h-5 opacity-10 text-green-600 animate-float-leaf" style={{ animationDelay: '4s', animationDuration: '12s' }}>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17,8C8,10,5.9,16.17,3.82,21.34L5.71,22l1-2.3A4.49,4.49,0,0,0,8,20C19,20,22,3,22,3,21,5,14,5.25,9,6.25S2,11.5,2,13.5a6.22,6.22,0,0,0,1.75,3.75C7,8,17,8,17,8Z" /></svg>
+                    </div>
                 </div>
 
                 {/* Vines - Simplified for mobile */}
@@ -128,7 +139,7 @@ const HeroSection = ({ imageStyle, onToggleDark, onMoreClick }) => {
 
                 <div className="inline-flex justify-center md:justify-start relative z-10">
                     <span className="bg-primary text-[10px] md:text-xs font-black uppercase tracking-widest px-4 py-2 text-white leading-tight rounded-md shadow-md transform -skew-x-6">
-                        Django Developer<br />/ Devops Engineer
+                        Student<br />/ DevOps Aspirant
                     </span>
                 </div>
 
@@ -142,8 +153,6 @@ const HeroSection = ({ imageStyle, onToggleDark, onMoreClick }) => {
                     </button>
                 </div>
             </motion.div>
-
-            <Navigation />
         </div>
     );
 };
