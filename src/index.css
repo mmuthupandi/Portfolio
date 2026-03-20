@@ -9,6 +9,16 @@
   --font-body: Inter, sans-serif;
 }
 
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+  will-change: transform;
+}
+
 body {
   min-height: max(884px, 100dvh);
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
