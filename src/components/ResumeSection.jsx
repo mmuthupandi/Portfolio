@@ -34,7 +34,7 @@ const ResumeSection = () => {
                         {/* MOBILE VIEW: Visual Card (Hidden on Desktop) */}
                         <div className="sm:hidden w-full py-12 flex flex-col items-center justify-center bg-gray-50 dark:bg-zinc-800 rounded-lg border-2 border-dashed border-gray-300 dark:border-zinc-700">
                             <span className="material-icons text-6xl text-primary mb-4">picture_as_pdf</span>
-                            <p className="text-lg font-bold dark:text-white">Muthupandi's Resume</p>
+                            <p className="text-lg font-bold dark:text-white">My Resume</p>
                             <p className="text-sm text-gray-500 text-center px-4">PDF preview is available on desktop. Tap below to view or download.</p>
                         </div>
 
