@@ -137,7 +137,7 @@ const WiringBackground = ({ isDark }) => {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none z-0"
-      style={{ background: 'rgba(5, 8, 15, 0.92)' }}
+      style={{ background: 'rgba(5, 8, 15, 0.7)', opacity: 0.45 }}
     />
   );
 };

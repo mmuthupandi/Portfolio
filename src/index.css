@@ -37,6 +37,14 @@ body::-webkit-scrollbar {
   .perspective-1000 {
     perspective: 1000px;
   }
+
+  /* Text readability helpers on animated backgrounds */
+  .text-readable {
+    text-shadow: 0 1px 8px rgba(0,0,0,0.8), 0 2px 20px rgba(0,0,0,0.5);
+  }
+  .text-readable-strong {
+    text-shadow: 0 2px 12px rgba(0,0,0,1), 0 4px 30px rgba(0,0,0,0.8);
+  }
 }
 
 .outline-text {

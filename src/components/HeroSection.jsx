@@ -156,7 +156,7 @@ const HeroSection = ({ onMoreClick }) => {
                 </div>
 
                 <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed text-center md:text-left max-w-sm mx-auto md:mx-0 relative z-10 px-4 md:px-0 font-medium md:font-normal drop-shadow-sm md:drop-shadow-none">
-                    Passionate about building scalable backends and automating infrastructure. Turning code into reliable solutions with Python & Modern DevOps tools.
+                    Passionate about exploring the world of scalable backends and infrastructure automation. I love the process of learning how to turn code into reliable solutions using Python and modern DevOps tools, and I'm constantly looking for new ways to grow and adapt my skills.
                 </p>
 
                 <div className="mt-4 flex justify-center md:justify-start relative z-10">
