@@ -30,12 +30,18 @@ const ResumeSection = () => {
                                 className="hidden sm:block absolute top-0 left-0 w-full h-full"
                                 aria-label="Resume PDF"
                             />
-                            {/* Mobile embed (Google Docs Viewer via iframe) */}
-                            <iframe 
-                                src="https://docs.google.com/viewer?url=https://muthupandi-dev.web.app/resume.pdf&embedded=true"
-                                className="sm:hidden absolute top-0 left-0 w-full h-full border-none"
-                                title="Resume PDF View"
-                            />
+                            {/* Mobile: tappable overlay that opens PDF fullscreen */}
+                            <a
+                                href="/resume.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="sm:hidden absolute inset-0 w-full h-full flex flex-col items-center justify-center gap-3 bg-zinc-800/90 rounded-lg"
+                                aria-label="Open resume fullscreen"
+                            >
+                                <span className="material-icons text-primary text-6xl">description</span>
+                                <span className="text-white font-bold text-base">Tap to view Resume</span>
+                                <span className="text-slate-400 text-xs">Opens in fullscreen</span>
+                            </a>
                         </div>
 
                     </div>
