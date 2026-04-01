@@ -1,8 +1,17 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-const HeroSection = ({ onToggleDark, onMoreClick }) => {
+const HeroSection = ({ onMoreClick }) => {
     const tiltRef = useRef(null);
     const sectionRef = useRef(null);
+    const roles = ["DevOps Aspirant", "FullStack Developer"];
+    const [roleIndex, setRoleIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setRoleIndex((prev) => (prev + 1) % roles.length);
+        }, 2500);
+        return () => clearInterval(interval);
+    }, []);
 
     const handleMouseMove = (e) => {
         if (!tiltRef.current || !sectionRef.current) return;
@@ -81,18 +90,11 @@ const HeroSection = ({ onToggleDark, onMoreClick }) => {
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none md:hidden"></div>
 
-                {/* Theme Toggle - Fixed position top right */}
-                <button
-                    className="fixed top-4 right-4 z-50 w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30 text-white shadow-lg md:bg-white/10"
-                    onClick={onToggleDark}
-                >
-                    <span className="material-icons text-xl">contrast</span>
-                </button>
             </motion.div>
 
             {/* Bottom/Right Content Section */}
             <motion.div
-                className="relative mt-auto md:mt-0 md:h-full w-full md:w-1/2 p-6 pb-32 md:pb-6 md:pr-28 flex flex-col justify-end md:justify-center gap-4 md:gap-5 z-10 overflow-hidden md:bg-background-light md:dark:bg-background-dark"
+                className="relative mt-auto md:mt-0 md:h-full w-full md:w-1/2 p-6 pb-32 md:pb-6 md:pr-28 flex flex-col justify-end md:justify-center gap-4 md:gap-5 z-10 overflow-hidden bg-transparent"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -138,8 +140,18 @@ const HeroSection = ({ onToggleDark, onMoreClick }) => {
                 </div>
 
                 <div className="inline-flex justify-center md:justify-start relative z-10">
-                    <span className="bg-primary text-[10px] md:text-xs font-black uppercase tracking-widest px-4 py-2 text-white leading-tight rounded-md shadow-md transform -skew-x-6">
-                        Student<br />/ DevOps Aspirant
+                    <span className="bg-primary text-[10px] md:text-xs font-black uppercase tracking-widest px-4 py-2 text-white leading-tight rounded-md shadow-md transform -skew-x-6 flex flex-col items-center md:items-start text-center md:text-left">
+                        <span>Student</span>
+                        <span className="flex overflow-hidden relative" style={{ height: '1.2em' }}>
+                            <motion.span
+                                key={roleIndex}
+                                initial={{ y: 20, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ duration: 0.5, ease: "easeOut" }}
+                            >
+                                / {roles[roleIndex]}
+                            </motion.span>
+                        </span>
                     </span>
                 </div>
 

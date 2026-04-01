@@ -5,7 +5,7 @@ const CertificationSection = () => {
   return (
     <section
       id="certifications"
-      className="w-full min-h-screen container mx-auto px-4 md:px-8 py-12 sm:py-16 lg:py-20 flex flex-col justify-center bg-background-light dark:bg-background-dark border-x border-gray-100 dark:border-gray-900 border-x-0 md:border-x"
+      className="w-full min-h-screen container mx-auto px-4 md:px-8 py-12 sm:py-16 lg:py-20 flex flex-col justify-center bg-transparent border-x border-gray-100/10 dark:border-gray-900/10 border-x-0 md:border-x relative z-10"
     >
       <div className="max-w-7xl mx-auto w-full">
         {/* Header */}

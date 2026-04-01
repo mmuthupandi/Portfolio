@@ -9,20 +9,15 @@ import ContactSection from './components/ContactSection';
 import Navigation from './components/Navigation';
 import IntroScreen from './components/IntroScreen';
 import CursorDot from './components/CursorDot';
+import WiringBackground from './components/WiringBackground';
 import './App.css'; 
 
 function App() {
-  const [isDark, setIsDark] = useState(true);
   const [showIntro, setShowIntro] = useState(true);
 
   useEffect(() => {
     document.documentElement.classList.add('dark');
   }, []);
-
-  const toggleDark = () => {
-    setIsDark((prev) => !prev);
-    document.documentElement.classList.toggle('dark');
-  };
 
   const scrollToAbout = () => {
     const aboutSection = document.getElementById('about');
@@ -33,14 +28,15 @@ function App() {
 
   return (
     <>
+      <WiringBackground isDark={true} />
       <CursorDot />
       {showIntro && <IntroScreen onComplete={() => setShowIntro(false)} />}
       <div
         id="mainContainer"
-        className={`relative w-full font-display scroll-smooth bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 ${showIntro ? 'h-screen overflow-hidden pointer-events-none' : 'min-h-screen'}`}
+        className={`relative w-full font-display scroll-smooth text-slate-900 dark:text-slate-100 ${showIntro ? 'h-screen overflow-hidden pointer-events-none' : 'min-h-screen'}`}
       >
 
-        <HeroSection onToggleDark={toggleDark} onMoreClick={scrollToAbout} />
+        <HeroSection onMoreClick={scrollToAbout} />
       <AboutSection />
       <WorkSection />
       <CertificationSection />

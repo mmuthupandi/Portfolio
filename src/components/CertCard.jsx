@@ -36,7 +36,6 @@ export default function CertCard({ certificate, isActive, onClick, shouldAnimate
       aria-describedby={`cert-desc-${certificate.id}`}
       aria-label={`View ${certificate.title} certificate from ${certificate.provider}`}
     >
-      {/* Main Card */}
       <div
         className={`relative h-[280px] sm:h-[320px] lg:h-[350px] rounded-xl overflow-hidden transition-all duration-300 touch-manipulation ${isActive
           ? 'shadow-2xl shadow-primary/20 ring-2 ring-primary/30'
@@ -66,21 +65,17 @@ export default function CertCard({ certificate, isActive, onClick, shouldAnimate
             />
           )}
 
-          {/* Hover/Focus Download Overlay */}
+          {/* Hover/Focus View Details Overlay */}
           <div
-            className={`absolute inset-0 bg-black/30 flex items-center justify-center transition-all duration-300 rounded-xl ${showOverlay ? 'opacity-100' : 'opacity-0'
+            className={`absolute inset-0 bg-black/40 flex items-center justify-center transition-all duration-300 rounded-xl pointer-events-none ${showOverlay ? 'opacity-100' : 'opacity-0'
               }`}
           >
-            <a
-              href={certificate.image}
-              download
-              onClick={(e) => e.stopPropagation()}
-              className={`flex flex-col items-center justify-center bg-primary hover:bg-blue-600 text-white w-16 h-16 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 active:scale-95 ${showOverlay ? 'translate-y-0 scale-100' : 'translate-y-4 scale-75'
+            <div
+              className={`flex flex-col items-center justify-center bg-primary/90 text-white px-6 py-3 rounded-full shadow-2xl transition-all duration-300 transform ${showOverlay ? 'translate-y-0 scale-100' : 'translate-y-4 scale-75'
                 }`}
-              title={`Download ${certificate.title}`}
             >
-              <span className="material-icons text-3xl">download</span>
-            </a>
+              <span className="font-bold tracking-wide">Click to view brief</span>
+            </div>
           </div>
 
           {/* Focus Ring */}

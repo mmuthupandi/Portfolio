@@ -4,7 +4,7 @@ const ResumeSection = () => {
     return (
         <section
             id="resume"
-            className="min-h-screen bg-background-light dark:bg-background-dark w-full max-w-7xl mx-auto border-x border-gray-100 dark:border-gray-900 p-8 flex flex-col justify-center"
+            className="min-h-screen bg-transparent w-full max-w-7xl mx-auto border-x border-gray-100/10 dark:border-gray-900/10 p-8 flex flex-col justify-center relative z-10"
         >
             <div className="space-y-8">
                 {/* Header */}
@@ -16,11 +16,11 @@ const ResumeSection = () => {
                 </div>
 
                 <div className="max-w-4xl mx-auto w-full">
-                    <div className="bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 rounded-2xl p-4 sm:p-8 flex flex-col items-center shadow-lg">
+                    <div className="bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border border-gray-200 dark:border-zinc-800 rounded-2xl p-4 sm:p-8 flex flex-col items-center shadow-lg">
 
-                        {/* DESKTOP VIEW: PDF Embed (Hidden on Mobile) */}
+                        {/* Resume PDF Embed - Visible on all screens */}
                         <div
-                            className="hidden sm:block w-full relative overflow-hidden rounded-lg border border-gray-200 dark:border-white/20 bg-gray-50 dark:bg-zinc-800"
+                            className="w-full relative overflow-hidden rounded-lg border border-gray-200 dark:border-white/20 bg-gray-50 dark:bg-zinc-800"
                             style={{ aspectRatio: '1 / 1.414' }}
                         >
                             <embed
@@ -31,34 +31,6 @@ const ResumeSection = () => {
                             />
                         </div>
 
-                        {/* MOBILE VIEW: Visual Card (Hidden on Desktop) */}
-                        <div className="sm:hidden w-full py-12 flex flex-col items-center justify-center bg-gray-50 dark:bg-zinc-800 rounded-lg border-2 border-dashed border-gray-300 dark:border-zinc-700">
-                            <span className="material-icons text-6xl text-primary mb-4">picture_as_pdf</span>
-                            <p className="text-lg font-bold dark:text-white">My Resume</p>
-                            <p className="text-sm text-gray-500 text-center px-4">PDF preview is available on desktop. Tap below to view or download.</p>
-                        </div>
-
-                        {/* ACTION BUTTONS */}
-                        <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                            <a
-                                href="/resume.pdf"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center justify-center bg-zinc-800 dark:bg-white text-white dark:text-black font-bold py-4 px-8 rounded-xl hover:opacity-90 transition-all"
-                            >
-                                <span className="material-icons mr-2">visibility</span>
-                                View PDF
-                            </a>
-
-                            <a
-                                href="/resume.pdf"
-                                download
-                                className="flex items-center justify-center bg-primary hover:bg-blue-600 transition-all text-white shadow-lg shadow-primary/30 font-bold py-4 px-8 rounded-xl"
-                            >
-                                <span className="material-icons mr-2">download</span>
-                                Download
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>

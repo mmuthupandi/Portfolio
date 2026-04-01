@@ -79,7 +79,7 @@ const ContactSection = () => {
     };
 
     return (
-        <div id="contact" className="relative min-h-screen bg-background-light dark:bg-background-dark w-full max-w-7xl mx-auto border-x border-gray-100 dark:border-gray-900 p-8 flex flex-col justify-center">
+        <div id="contact" className="relative min-h-screen bg-transparent w-full max-w-7xl mx-auto border-x border-gray-100/10 dark:border-gray-900/10 p-8 flex flex-col justify-center z-10">
             <div className="space-y-8 min-h-screen flex flex-col justify-center items-center text-center pb-16">
                 <div className="space-y-4">
                     <h2 className="text-3xl font-black tracking-tight dark:text-white">Get In Touch</h2>
@@ -100,7 +100,7 @@ const ContactSection = () => {
                                 name="name"
                                 required
                                 disabled={status === 'loading' || status === 'success'}
-                                className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all dark:text-white disabled:opacity-50"
+                                className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-zinc-800 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all dark:text-white disabled:opacity-50"
                             />
                         </div>
                         <div className="space-y-2">
@@ -111,7 +111,7 @@ const ContactSection = () => {
                                 name="email"
                                 required
                                 disabled={status === 'loading' || status === 'success'}
-                                className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all dark:text-white disabled:opacity-50"
+                                className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-zinc-800 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all dark:text-white disabled:opacity-50"
                             />
                         </div>
                         <div className="space-y-2">
@@ -121,7 +121,7 @@ const ContactSection = () => {
                                 name="message"
                                 required
                                 disabled={status === 'loading' || status === 'success'}
-                                className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all dark:text-white min-h-[120px] disabled:opacity-50"
+                                className="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-zinc-800 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all dark:text-white min-h-[120px] disabled:opacity-50"
                             ></textarea>
                         </div>
 

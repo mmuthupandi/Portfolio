@@ -16,6 +16,13 @@ const WorkSection = () => {
             liveLink: "https://mozhiyaam.vercel.app/",
             githubLink: "https://github.com/udhayasankar-UD/mozhiyaam"
         },
+        {
+            title: "Personal Portfolio",
+            description: "A highly interactive, deeply personalized portfolio website featuring complex glassmorphism, responsive animated layouts, and full custom theme implementations designed to showcase my projects and technical skills.",
+            tech: ["React", "Tailwind CSS", "Framer Motion"],
+            liveLink: "https://muthupandi-dev.web.app/",
+            githubLink: "https://github.com/mmuthupandi/Portfolio_0"
+        }
     ];
 
     // SVG icons
@@ -33,18 +40,21 @@ const WorkSection = () => {
     );
 
     return (
-        <div id="work" className="min-h-screen bg-background-light dark:bg-background-dark w-full max-w-7xl mx-auto border-x border-gray-100 dark:border-gray-900 p-8 flex flex-col justify-center">
+        <div id="work" className="min-h-screen bg-transparent w-full max-w-7xl mx-auto border-x border-gray-100/10 dark:border-gray-900/10 p-8 flex flex-col justify-center relative z-10">
             <div className="space-y-8">
-                <div className="flex justify-start">
+                <div className="flex flex-col justify-start space-y-4">
                     <div className="space-y-2">
                         <h2 className="text-3xl font-black tracking-tight dark:text-white">My Work</h2>
                         <div className="w-20 h-1 bg-primary"></div>
                     </div>
+                    <p className="text-slate-600 dark:text-slate-400 font-medium md:text-lg max-w-2xl">
+                        A curated selection of the top three projects I've built to solve real-world problems and explore new technologies.
+                    </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
                     {projects.map((project, index) => (
-                        <div key={index} className="group relative bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 rounded-2xl p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                        <div key={index} className="w-full flex-col flex group relative bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border border-gray-200 dark:border-zinc-800 rounded-2xl p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                             <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
                                 <span className="material-icons text-6xl text-primary">folder_open</span>
                             </div>
