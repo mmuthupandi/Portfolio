@@ -4,9 +4,9 @@ const ResumeSection = () => {
     return (
         <section
             id="resume"
-            className="min-h-screen bg-transparent w-full max-w-7xl mx-auto border-x border-gray-100/10 dark:border-gray-900/10 p-8 flex flex-col justify-center relative z-10"
+            className="w-full bg-transparent relative z-10 py-16 md:py-24"
         >
-            <div className="space-y-8">
+            <div className="max-w-7xl mx-auto px-8 space-y-8">
                 {/* Header */}
                 <div className="flex justify-start">
                     <div className="space-y-2 text-left">
@@ -23,11 +23,18 @@ const ResumeSection = () => {
                             className="w-full relative overflow-hidden rounded-lg border border-gray-200 dark:border-white/20 bg-gray-50 dark:bg-zinc-800"
                             style={{ aspectRatio: '1 / 1.414' }}
                         >
+                            {/* Desktop embed (native view) */}
                             <embed
                                 src="/resume.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
                                 type="application/pdf"
-                                className="absolute top-0 left-0 w-full h-full"
+                                className="hidden sm:block absolute top-0 left-0 w-full h-full"
                                 aria-label="Resume PDF"
+                            />
+                            {/* Mobile embed (Google Docs Viewer via iframe) */}
+                            <iframe 
+                                src="https://docs.google.com/viewer?url=https://muthupandi-dev.web.app/resume.pdf&embedded=true"
+                                className="sm:hidden absolute top-0 left-0 w-full h-full border-none"
+                                title="Resume PDF View"
                             />
                         </div>
 

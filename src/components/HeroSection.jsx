@@ -39,7 +39,7 @@ const HeroSection = ({ onMoreClick }) => {
     };
 
     return (
-        <div id="heroSection" className="relative md:h-screen min-h-screen flex flex-col md:flex-row overflow-hidden w-full max-w-7xl mx-auto border-x-0 md:border-x border-gray-100 dark:border-gray-900">
+        <div id="heroSection" className="relative md:h-screen min-h-screen flex flex-col md:flex-row overflow-hidden w-full bg-transparent">
             {/* Top/Left Image Section */}
             <motion.div
                 id="imageSection"

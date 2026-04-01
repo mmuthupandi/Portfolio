@@ -40,8 +40,8 @@ const WorkSection = () => {
     );
 
     return (
-        <div id="work" className="min-h-screen bg-transparent w-full max-w-7xl mx-auto border-x border-gray-100/10 dark:border-gray-900/10 p-8 flex flex-col justify-center relative z-10">
-            <div className="space-y-8">
+        <div id="work" className="w-full bg-transparent relative z-10 min-h-screen flex flex-col justify-center py-16 md:py-24">
+            <div className="max-w-7xl mx-auto px-8 space-y-8">
                 <div className="flex flex-col justify-start space-y-4">
                     <div className="space-y-2">
                         <h2 className="text-3xl font-black tracking-tight dark:text-white">My Work</h2>

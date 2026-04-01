@@ -79,8 +79,8 @@ const ContactSection = () => {
     };
 
     return (
-        <div id="contact" className="relative min-h-screen bg-transparent w-full max-w-7xl mx-auto border-x border-gray-100/10 dark:border-gray-900/10 p-8 flex flex-col justify-center z-10">
-            <div className="space-y-8 min-h-screen flex flex-col justify-center items-center text-center pb-16">
+        <div id="contact" className="w-full bg-transparent relative z-10 py-16 md:py-24">
+            <div className="space-y-8 flex flex-col justify-center items-center text-center px-4 w-full">
                 <div className="space-y-4">
                     <h2 className="text-3xl font-black tracking-tight dark:text-white">Get In Touch</h2>
                     <div className="w-20 h-1 bg-primary mx-auto"></div>

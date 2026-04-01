@@ -5,9 +5,9 @@ const CertificationSection = () => {
   return (
     <section
       id="certifications"
-      className="w-full min-h-screen container mx-auto px-4 md:px-8 py-12 sm:py-16 lg:py-20 flex flex-col justify-center bg-transparent border-x border-gray-100/10 dark:border-gray-900/10 border-x-0 md:border-x relative z-10"
+      className="w-full bg-transparent relative z-10 py-16 md:py-24"
     >
-      <div className="max-w-7xl mx-auto w-full">
+      <div className="max-w-7xl mx-auto px-8 w-full">
         {/* Header */}
         <div className="flex justify-center mb-8 sm:mb-12 lg:mb-16">
           <div className="space-y-4 text-center">

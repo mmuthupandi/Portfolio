@@ -99,7 +99,7 @@ export default function CertModal({ certificate, onClose, onNext, onPrev }) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4"
       onClick={handleBackdropClick}
       role="dialog"
       aria-modal="true"
@@ -115,7 +115,7 @@ export default function CertModal({ certificate, onClose, onNext, onPrev }) {
       {/* Modal Content */}
       <div
         ref={modalRef}
-        className="relative w-full max-w-4xl max-h-[90vh] rounded-xl overflow-hidden focus:outline-none bg-white/95 dark:bg-[#0b1116]/95 border border-primary/20 backdrop-blur-xl"
+        className="relative w-full max-w-4xl max-h-[90vh] rounded-xl flex flex-col focus:outline-none bg-white/95 dark:bg-[#0b1116]/95 border border-primary/20 backdrop-blur-xl overflow-hidden"
         tabIndex={-1}
       >
         {/* Header */}
@@ -169,38 +169,49 @@ export default function CertModal({ certificate, onClose, onNext, onPrev }) {
           </div>
         </div>
 
-        {/* Image Container */}
-        <div className="relative flex-1 flex items-center justify-center p-6 max-h-[70vh]">
+        {/* Image Container - scrollable so tall portrait images don't push header away */}
+        <div className="flex-1 overflow-y-auto flex items-center justify-center p-6">
           {certificate.image.toLowerCase().endsWith('.pdf') ? (
             <embed
+              key={`embed-${certificate.id}`}
               src={`${certificate.image}#view=FitH`}
               type="application/pdf"
               className="w-full h-full min-h-[60vh] object-contain rounded-lg shadow-2xl"
             />
           ) : (
-            <img
-              ref={imageRef}
-              src={certificate.image}
-              alt={certificate.alt}
-              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
-              onError={(e) => {
-                // Fallback for broken images
-                e.currentTarget.style.display = 'none';
-                e.currentTarget.nextElementSibling?.classList.remove('hidden');
-              }}
-            />
+            <>
+              {/* Reset error state gracefully by using a key to remount the image tag on source change */}
+              <img
+                key={`img-${certificate.id}`}
+                ref={imageRef}
+                src={certificate.image}
+                alt={certificate.alt}
+                className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                }}
+                onLoad={(e) => {
+                  e.currentTarget.style.display = 'block';
+                  e.currentTarget.nextElementSibling?.classList.add('hidden');
+                }}
+              />
+              
+              {/* Fallback content */}
+              <div 
+                key={`fallback-${certificate.id}`}
+                className="hidden text-center text-slate-500 dark:text-white/70"
+              >
+                <div className="text-6xl mb-4">📜</div>
+                <div className="text-lg font-medium mb-2">{certificate.title}</div>
+                <div className="text-base text-primary mb-2">{certificate.provider}</div>
+                <div className="text-sm dark:text-gray-300 text-gray-600">{certificate.desc}</div>
+                <div className="mt-4 text-xs text-gray-400">
+                  Certificate preview could not be loaded. Please click Download.
+                </div>
+              </div>
+            </>
           )}
-          
-          {/* Fallback content */}
-          <div className="hidden text-center text-slate-500 dark:text-white/70">
-            <div className="text-6xl mb-4">📜</div>
-            <div className="text-lg font-medium mb-2">{certificate.title}</div>
-            <div className="text-base text-primary mb-2">{certificate.provider}</div>
-            <div className="text-sm dark:text-gray-300 text-gray-600">{certificate.desc}</div>
-            <div className="mt-4 text-xs text-gray-400">
-              Certificate image could not be loaded
-            </div>
-          </div>
         </div>
 
         {/* Footer */}
