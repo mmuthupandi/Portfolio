@@ -39,7 +39,7 @@ const HeroSection = ({ onMoreClick }) => {
     };
 
     return (
-        <div id="heroSection" className="relative min-h-screen flex flex-col md:flex-row overflow-hidden w-full bg-transparent">
+        <div id="heroSection" className="relative md:h-screen min-h-screen flex flex-col md:flex-row overflow-hidden w-full bg-transparent">
             {/* Top/Left Image Section */}
             <motion.div
                 id="imageSection"
@@ -49,14 +49,14 @@ const HeroSection = ({ onMoreClick }) => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.0 }}
-                className="relative h-[55vh] md:h-full w-full md:w-1/2 overflow-hidden shrink-0 transition-all duration-700 perspective-1000 group dark:bg-black/10 md:bg-transparent z-0"
+                className="absolute inset-0 h-full w-full md:relative md:h-full md:w-1/2 overflow-hidden shrink-0 transition-all duration-700 perspective-1000 group bg-gray-50 dark:bg-black/20 md:bg-transparent z-0"
             >
-                {/* 3D Tilt Interaction Wrapper */}
-                <div id="imageTiltWrapper" ref={tiltRef} className="w-full h-full flex items-end md:items-start justify-center md:pb-0 md:pt-24 transition-transform duration-100 ease-out">
+                {/* 3D Tilt Interaction Wrapper - Mobile: Image covers bg */}
+                <div id="imageTiltWrapper" ref={tiltRef} className="w-full h-full flex items-end md:items-start justify-center pb-52 md:pb-0 md:pt-24 transition-transform duration-100 ease-out">
                     <div className="w-full h-full md:h-[85%] animate-levitate relative z-20 pointer-events-none flex items-end justify-center md:items-end md:justify-center">
                         <img
                             alt="Portrait of Muthupandi"
-                            className="h-full w-auto max-w-full object-contain object-bottom md:object-contain drop-shadow-2xl opacity-90 md:opacity-100"
+                            className="h-[85%] md:h-full w-auto max-w-none md:max-w-full object-cover object-top md:object-contain drop-shadow-2xl opacity-90 md:opacity-100"
                             src="/bg_removed.png"
                             style={{ filter: 'drop-shadow(0 20px 20px rgba(0,0,0,0.3))' }}
                         />
@@ -156,7 +156,7 @@ const HeroSection = ({ onMoreClick }) => {
                 </div>
 
                 <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed text-center md:text-left max-w-sm mx-auto md:mx-0 relative z-10 px-4 md:px-0 font-medium md:font-normal drop-shadow-sm md:drop-shadow-none">
-                    Passionate about exploring the world of scalable backends and infrastructure automation. I love the process of learning how to turn code into reliable solutions using Python and modern DevOps tools, and I'm constantly looking for new ways to grow and adapt my skills.
+                    Passionate about building scalable backends and automating infrastructure. Turning code into reliable solutions with Python & Modern DevOps tools.
                 </p>
 
                 <div className="mt-4 flex justify-center md:justify-start relative z-10">
