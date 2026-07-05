@@ -20,27 +20,15 @@ const ResumeSection = () => {
 
                         {/* Resume PDF Embed - Visible on all screens */}
                         <div
-                            className="w-full relative overflow-hidden rounded-lg border border-gray-200 dark:border-white/20 bg-gray-50 dark:bg-zinc-800 sm:aspect-[1/1.414]"
+                            className="w-full relative overflow-hidden rounded-lg border border-gray-200 dark:border-white/20 bg-gray-50 dark:bg-zinc-800"
+                            style={{ aspectRatio: '8.5 / 11' }}
                         >
-                            {/* Desktop embed (native view) */}
                             <embed
-                                src="/resume.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+                                src="/resume.pdf?v=2#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
                                 type="application/pdf"
-                                className="hidden sm:block absolute top-0 left-0 w-full h-full"
+                                className="absolute top-0 left-0 w-full h-full"
                                 aria-label="Resume PDF"
                             />
-                            {/* Mobile: tappable overlay that opens PDF fullscreen */}
-                            <a
-                                href="/resume.pdf"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="sm:hidden w-full flex flex-col items-center justify-center gap-3 py-16 bg-zinc-800/90 hover:bg-zinc-700/90 transition-colors rounded-lg"
-                                aria-label="Open resume fullscreen"
-                            >
-                                <span className="material-icons text-primary text-6xl">description</span>
-                                <span className="text-white font-bold text-base">Tap to view Resume</span>
-                                <span className="text-slate-400 text-xs">Opens in fullscreen</span>
-                            </a>
                         </div>
 
                     </div>
