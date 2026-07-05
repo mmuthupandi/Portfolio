@@ -20,8 +20,7 @@ const ResumeSection = () => {
 
                         {/* Resume PDF Embed - Visible on all screens */}
                         <div
-                            className="w-full relative overflow-hidden rounded-lg border border-gray-200 dark:border-white/20 bg-gray-50 dark:bg-zinc-800"
-                            style={{ aspectRatio: '1 / 1.414' }}
+                            className="w-full relative overflow-hidden rounded-lg border border-gray-200 dark:border-white/20 bg-gray-50 dark:bg-zinc-800 sm:aspect-[1/1.414]"
                         >
                             {/* Desktop embed (native view) */}
                             <embed
@@ -35,7 +34,7 @@ const ResumeSection = () => {
                                 href="/resume.pdf"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="sm:hidden absolute inset-0 w-full h-full flex flex-col items-center justify-center gap-3 bg-zinc-800/90 rounded-lg"
+                                className="sm:hidden w-full flex flex-col items-center justify-center gap-3 py-16 bg-zinc-800/90 hover:bg-zinc-700/90 transition-colors rounded-lg"
                                 aria-label="Open resume fullscreen"
                             >
                                 <span className="material-icons text-primary text-6xl">description</span>

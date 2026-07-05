@@ -7,7 +7,7 @@ export const magneticVariance = cva(
       variant: {
         default: 'bg-transparent before:bg-transparent after:bg-transparent',
         primary:
-          'bg-primary text-background before:bg-primary-foreground after:bg-primary-foreground',
+          'bg-primary text-background-light before:bg-primary-foreground after:bg-primary-foreground',
         destructive:
           'bg-background text-destructive-foreground before:bg-destructive after:bg-destructive',
         secondary:

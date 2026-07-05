@@ -27,26 +27,26 @@ const AboutSection = () => {
             <div className="max-w-7xl mx-auto px-8 space-y-6">
                 <div className="flex justify-end">
                     <div className="space-y-2 text-right">
-                        <h2 className="text-3xl font-black tracking-tight dark:text-white drop-shadow-lg">About Me</h2>
+                        <h2 className="text-3xl font-black tracking-tight dark:text-white">About Me</h2>
                         <div className="w-20 h-1 bg-primary ml-auto"></div>
                     </div>
                 </div>
 
                 <div className="space-y-4">
-                    <p className="text-slate-700 dark:text-slate-200 font-medium leading-relaxed drop-shadow-md">
+                    <p className="text-slate-700 dark:text-slate-200 font-medium leading-relaxed">
                         Hello! I’m <span className="text-primary font-bold">Muthupandi</span>, a second-year undergraduate at Kongunadu Arts and Science College. I am a dedicated student on an exciting journey into the worlds of Software Engineering and DevOps, and I am currently looking for an internship where I can contribute while I continue to grow.
                     </p>
 
-                    <p className="text-slate-700 dark:text-slate-200 font-medium leading-relaxed drop-shadow-md">
+                    <p className="text-slate-700 dark:text-slate-200 font-medium leading-relaxed">
                         I have built a foundational toolkit in Python, Django, and React, including earning a Google Certification in Python, but I view these as just the starting point. My true strength lies in my love for the process I genuinely enjoy the challenge of learning a new framework or solving a complex backend problem from scratch.
                     </p>
 
-                    <p className="text-slate-700 dark:text-slate-200 font-medium leading-relaxed drop-shadow-md">
+                    <p className="text-slate-700 dark:text-slate-200 font-medium leading-relaxed">
                         I don’t claim to know everything yet, but I pride myself on being a quick learner who adapts easily to new environments. I’m looking for a team where I can apply my problem-solving mindset and my passion for automation to create real-world impact, all while learning from the best in the industry.
                     </p>
 
                     <div className="space-y-6 pt-6">
-                        <h3 className="text-2xl font-bold dark:text-white drop-shadow-md">Skills</h3>
+                        <h3 className="text-2xl font-bold dark:text-white">Skills</h3>
 
                         {/* Sliding Tech Skills */}
                         <div className="w-full py-6 space-y-6 overflow-hidden">
@@ -86,13 +86,13 @@ const AboutSection = () => {
                         {/* Stats Cards */}
                         <div className="grid grid-cols-3 gap-4 pt-6">
                             {[
-                                { value: '3+', label: 'Years Coding', color: 'text-blue-400' },
-                                { value: '7', label: 'Projects', color: 'text-green-400' },
-                                { value: '∞', label: 'Ideas', color: 'text-red-400' },
+                                { value: '3+', label: 'Years Coding', color: 'text-primary' },
+                                { value: '7', label: 'Projects', color: 'text-secondary' },
+                                { value: '∞', label: 'Ideas', color: 'text-onyx dark:text-white' },
                             ].map((stat) => (
                                 <div key={stat.label} className="flex flex-col items-center justify-center bg-white/80 dark:bg-[#111827]/80 backdrop-blur-md border border-gray-200 dark:border-white/10 rounded-2xl py-6 gap-2 shadow-lg hover:scale-105 transition-transform duration-300">
                                     <span className={`text-3xl md:text-4xl font-black ${stat.color}`}>{stat.value}</span>
-                                    <span className="text-xs md:text-sm text-slate-500 dark:text-slate-400 font-medium text-center leading-tight drop-shadow-sm">{stat.label}</span>
+                                    <span className="text-xs md:text-sm text-slate-500 dark:text-slate-400 font-medium text-center leading-tight">{stat.label}</span>
                                 </div>
                             ))}
                         </div>

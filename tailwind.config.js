@@ -8,9 +8,11 @@ export default {
     theme: {
         extend: {
             colors: {
-                primary: "#3b82f6",
-                "background-light": "#ffffff",
-                "background-dark": "#0a0a0a",
+                primary: "#2C3E35",
+                secondary: "#7D6B58",
+                onyx: "#1E1E1E",
+                "background-light": "#E4E0D2",
+                "background-dark": "#1E1E1E",
             },
             fontFamily: {
                 display: ["Inter", "sans-serif"],
@@ -22,10 +24,17 @@ export default {
                 marquee: {
                     '0%': { transform: 'translateX(0%)' },
                     '100%': { transform: 'translateX(-100%)' },
+                },
+                blob: {
+                    '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                    '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                    '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                    '100%': { transform: 'translate(0px, 0px) scale(1)' },
                 }
             },
             animation: {
                 marquee: 'marquee 25s linear infinite',
+                blob: 'blob 7s infinite',
             }
         },
     },

@@ -28,7 +28,7 @@ const WiringBackground = ({ isDark }) => {
 
     const initParticles = () => {
       particles = [];
-      const numParticles = Math.floor((width * height) / 12000); 
+      const numParticles = Math.floor((width * height) / 12000);
       for (let i = 0; i < numParticles; i++) {
         particles.push({
           x: Math.random() * width,
@@ -59,7 +59,7 @@ const WiringBackground = ({ isDark }) => {
       const r = isDarkMode ? 96 : 59;
       const g = isDarkMode ? 165 : 130;
       const b = isDarkMode ? 250 : 246;
-      
+
       const dotColor = isDarkMode ? 'rgba(96, 165, 250, 0.7)' : 'rgba(59, 130, 246, 0.7)';
 
       for (let i = 0; i < particles.length; i++) {

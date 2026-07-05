@@ -42,12 +42,11 @@ const CursorDot = () => {
                 width: '12px',
                 height: '12px',
                 borderRadius: '50%',
-                backgroundColor: 'white',
+                backgroundColor: 'var(--color-primary)',
                 pointerEvents: 'none',
                 zIndex: 9999,
-                mixBlendMode: 'difference',
                 willChange: 'transform',
-                boxShadow: '0 0 8px 2px rgba(255,255,255,0.5)',
+                boxShadow: '0 0 8px 2px rgba(44, 62, 53, 0.4)',
                 // Hide on touch devices via CSS
                 display: window.matchMedia('(pointer: fine)').matches ? 'block' : 'none',
             }}

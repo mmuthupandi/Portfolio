@@ -2,9 +2,11 @@
 @variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-primary: #3b82f6;
-  --color-background-light: #ffffff;
-  --color-background-dark: #0a0a0a;
+  --color-primary: #2C3E35;
+  --color-secondary: #7D6B58;
+  --color-onyx: #1E1E1E;
+  --color-background-light: #E4E0D2;
+  --color-background-dark: #1E1E1E;
   --font-display: Inter, sans-serif;
   --font-body: Inter, sans-serif;
 }
@@ -19,6 +21,10 @@
   will-change: transform;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   min-height: max(884px, 100dvh);
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
@@ -29,7 +35,7 @@ body {
   -ms-overflow-style: none;     /* IE / Edge */
 }
 
-body::-webkit-scrollbar {
+::-webkit-scrollbar {
   display: none;                /* Chrome, Safari, Opera */
 }
 
@@ -41,7 +47,7 @@ body::-webkit-scrollbar {
 
 .outline-text {
   color: transparent;
-  -webkit-text-stroke: 1.5px #3b82f6;
+  -webkit-text-stroke: 1.5px var(--color-primary);
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
   font-size: 1.5rem;
@@ -55,7 +61,7 @@ body::-webkit-scrollbar {
   position: absolute;
   left: 0;
   top: 0;
-  color: #3b82f6;
+  color: var(--color-primary);
   -webkit-text-stroke: 0px;
   width: 0;
   overflow: hidden;
@@ -77,13 +83,13 @@ body::-webkit-scrollbar {
 
   0%,
   100% {
-    -webkit-text-stroke: 1.5px #3b82f6;
-    filter: drop-shadow(0 0 0px #3b82f6);
+    -webkit-text-stroke: 1.5px var(--color-primary);
+    filter: drop-shadow(0 0 0px var(--color-primary));
   }
 
   50% {
-    -webkit-text-stroke: 2px #3b82f6;
-    filter: drop-shadow(0 0 8px #3b82f6);
+    -webkit-text-stroke: 2px var(--color-primary);
+    filter: drop-shadow(0 0 8px var(--color-primary));
   }
 }
 
@@ -169,8 +175,16 @@ body::-webkit-scrollbar {
     opacity: 1;
   }
 
+  35% {
+    transform: translateY(35vh) rotate(120deg) translateX(60px);
+  }
+
+  70% {
+    transform: translateY(70vh) rotate(250deg) translateX(-60px);
+  }
+
   100% {
-    transform: translateY(100px) rotate(360deg) translateX(20px);
+    transform: translateY(110vh) rotate(360deg) translateX(20px);
     opacity: 0;
   }
 }
@@ -242,7 +256,7 @@ body::-webkit-scrollbar {
   position: absolute;
   background: #fff;
   border-radius: 50%;
-  box-shadow: 0 0 10px #fff, 0 0 20px #3b82f6;
+  box-shadow: 0 0 10px #fff, 0 0 20px var(--color-primary);
   animation: firefly-move ease-in-out infinite;
 }
 
@@ -310,7 +324,7 @@ body::-webkit-scrollbar {
 
 .bird-container {
   position: absolute;
-  top: 10%;
+  top: 15%;
   left: -10%;
   transform: scale(0) translateX(-10vw);
   will-change: transform;
@@ -320,23 +334,33 @@ body::-webkit-scrollbar {
 }
 
 .bird-container--one {
-  animation-duration: 15s;
-  animation-delay: 0;
+  animation-duration: 10s;
+  animation-delay: 0s;
 }
 
 .bird-container--two {
-  animation-duration: 16s;
-  animation-delay: 1s;
+  animation-duration: 12s;
+  animation-delay: 2s;
 }
 
 .bird-container--three {
-  animation-duration: 14.6s;
-  animation-delay: 9.5s;
+  animation-duration: 9s;
+  animation-delay: 4s;
 }
 
 .bird-container--four {
-  animation-duration: 16s;
-  animation-delay: 10.25s;
+  animation-duration: 11s;
+  animation-delay: 6s;
+}
+
+.bird-container--five {
+  animation-duration: 13s;
+  animation-delay: 8s;
+}
+
+.bird-container--six {
+  animation-duration: 10.5s;
+  animation-delay: 1s;
 }
 
 @keyframes fly-cycle {
